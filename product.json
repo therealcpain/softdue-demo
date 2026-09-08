@@ -1,0 +1,35 @@
+{
+  "name": "SoftDue",
+  "product_id": "softdue",
+  "price_usd": 9,
+  "currency": "USD",
+  "purchase_url": "https://brewchristian.gumroad.com/l/abjltd",
+  "landing_url": "https://therealcpain.github.io/softdue-demo/",
+  "license": "Personal use for your own freelance practice. Do not resell the kit.",
+  "contents": [
+    "Day 0 / +3 / +7 / +14 invoice reminder email templates (markdown)",
+    "Payment-link insert patterns (Stripe / PayPal / Wise / Venmo)",
+    "CSV tracker + HTML tracker (stop when paid)",
+    "Tone guide"
+  ],
+  "summary": "Polite invoice-reminder templates + tracker for solo freelancers. $9 one-time.",
+  "feedback": {
+    "human_ui": "Feedback FAB on landing (FormSubmit)",
+    "endpoint": "https://formsubmit.co/steward@brewcityblockchain.com",
+    "method": "POST",
+    "fields": {
+      "product": "SoftDue",
+      "page_url": "https://therealcpain.github.io/softdue-demo/",
+      "_subject": "[SoftDue] landing feedback",
+      "_captcha": "false",
+      "_template": "table",
+      "message": "(required freeform)",
+      "email": "(optional)",
+      "tags": "(optional chips)"
+    }
+  },
+  "agentic": {
+    "llms_txt": "./llms.txt",
+    "agents_md": "./AGENTS.md"
+  }
+}
