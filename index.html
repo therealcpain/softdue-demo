@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SoftDue — Get paid without the awkward email</title>
+  <meta name="description" content="Polite Day 0 / +3 / +7 / +14 invoice reminder templates + a simple tracker for freelancers. $9 one-time. Not accounting software.">
+  <!--
+    GoatCounter (privacy-friendly). Site code may be remapped when the account exists.
+    SoftDue site code: softdue → https://softdue.goatcounter.com/count
+    Env override note: set data-goatcounter via deploy env / meta if codes differ.
+    Same pattern for MagnetPage (magnetpage) and Writerstack (writerstack).
+  -->
+  <!-- goatcounter-site: softdue -->
+  <script data-goatcounter="https://softdue.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+  <style>
+    :root {
+      --bg: #fafaf9;
+      --fg: #1c1917;
+      --muted: #78716c;
+      --card: #ffffff;
+      --accent: #0369a1;
+      --accent-fg: #ffffff;
+      --accent-soft: #e0f2fe;
+      --border: #e7e5e4;
+      --radius: 12px;
+      --max: 720px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.55;
+    }
+    a { color: var(--accent); }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem; }
+    header.hero {
+      text-align: center;
+      padding: 3rem 0 2.25rem;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: clamp(1.75rem, 4vw, 2.35rem);
+      margin: 0 0 0.75rem;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      font-weight: 800;
+    }
+    .lead {
+      font-size: 1.1rem;
+      color: var(--muted);
+      margin: 0 auto 1.75rem;
+      max-width: 34rem;
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      align-items: center;
+    }
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 0.85rem 1.35rem;
+      border-radius: 10px;
+      font-size: 1rem;
+      border: 2px solid transparent;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--accent-fg);
+    }
+    .btn-primary:hover { filter: brightness(1.06); }
+    .btn-secondary {
+      background: var(--card);
+      color: var(--fg);
+      border-color: var(--border);
+    }
+    .btn-secondary:hover { border-color: var(--accent); }
+    .price-pill {
+      display: inline-block;
+      margin-top: 1.25rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+    .price-pill span { color: var(--accent); font-size: 1.35rem; }
+    section {
+      padding: 2.25rem 0;
+      border-top: 1px solid var(--border);
+    }
+    h2 {
+      font-size: 1.35rem;
+      margin: 0 0 1rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+    h3 {
+      font-size: 1.05rem;
+      margin: 0 0 0.35rem;
+      font-weight: 700;
+    }
+    .muted { color: var(--muted); }
+    .grid { display: grid; gap: 0.85rem; }
+    @media (min-width: 560px) {
+      .grid-2 { grid-template-columns: 1fr 1fr; }
+      .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.25rem;
+    }
+    .card p { margin: 0; font-size: 0.92rem; color: var(--muted); }
+    .flow {
+      display: grid;
+      gap: 0.85rem;
+    }
+    @media (min-width: 640px) {
+      .flow { grid-template-columns: 1fr 1fr; }
+    }
+    .flow-step {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.2rem;
+    }
+    .flow-step .day {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      margin-bottom: 0.5rem;
+    }
+    .flow-step .subj {
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin: 0 0 0.45rem;
+    }
+    .flow-step .ex {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin: 0;
+      font-style: italic;
+    }
+    ul.check {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    ul.check li {
+      position: relative;
+      padding: 0.55rem 0 0.55rem 1.75rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+    ul.check li:last-child { border-bottom: none; }
+    ul.check li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 800;
+    }
+    .price-box {
+      background: var(--card);
+      border: 2px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 1.75rem 1.5rem;
+      text-align: center;
+    }
+    .price-box .amount {
+      font-size: 2.75rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin: 0.35rem 0;
+      color: var(--accent);
+    }
+    .price-box .amount small {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .faq details {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.85rem 1.1rem;
+      margin-bottom: 0.65rem;
+    }
+    .faq summary { font-weight: 700; cursor: pointer; }
+    .faq details p {
+      margin: 0.65rem 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .split { display: grid; gap: 1rem; }
+    @media (min-width: 560px) {
+      .split { grid-template-columns: 1fr 1fr; }
+    }
+    .for-not .card.no { border-style: dashed; opacity: 0.92; }
+    footer.site {
+      text-align: center;
+      padding: 2.5rem 1.25rem 3rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    footer.site .cta-row { margin: 1rem 0; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <span class="badge">One-time download · $9</span>
+      <h1>Get paid without<br>the awkward email.</h1>
+      <p class="lead">
+        SoftDue is a polite invoice-reminder kit for solo freelancers:
+        Day 0 / +3 / +7 / +14 email templates plus a simple tracker.
+        Not QuickBooks. Not tax software. Just the chase emails that get cash unstuck.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://brewchristian.gumroad.com/l/abjltd" data-cta="gumroad"
+           onclick="window.goatcounter &amp;&amp; goatcounter.count({path: '/cta/buy', title: 'Buy SoftDue', event: true})">Buy SoftDue — $9</a>
+        <a class="btn btn-secondary" href="#flow">See the sequence</a>
+      </div>
+      <p class="price-pill"><span>$9</span> one-time · personal freelance use · you keep the files</p>
+    </header>
+
+    <section id="problem" aria-labelledby="problem-title">
+      <h2 id="problem-title">The quiet cash leak</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Invoices go out</h3>
+          <p>You deliver. You send the PDF or payment link. Then… silence.</p>
+        </div>
+        <div class="card">
+          <h3>Follow-ups stall</h3>
+          <p>“Just checking in…” feels awkward, so you skip it. Money sits 14–60 days.</p>
+        </div>
+        <div class="card">
+          <h3>No system</h3>
+          <p>Accounting suites are overkill when you only need polite reminders + a stop-when-paid list.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="flow" aria-labelledby="flow-title">
+      <h2 id="flow-title">The Day 0 → +14 flow</h2>
+      <p class="muted" style="margin:0 0 1rem;font-size:0.95rem;">Four ready-to-send emails. Replace placeholders. Mark Paid → stop the sequence.</p>
+      <div class="flow">
+        <div class="flow-step">
+          <span class="day">Day 0 · with invoice</span>
+          <p class="subj">Subject: Invoice #1042 for Brand refresh — due Mar 15</p>
+          <p class="ex">“Thanks again for the work on Brand refresh. Invoice #1042 for $1,200 is linked below. Due Mar 15. Pay here: [link]. If anything looks off, reply and I’ll fix it the same day.”</p>
+        </div>
+        <div class="flow-step">
+          <span class="day">Day +3 · friendly</span>
+          <p class="subj">Subject: Quick nudge — Invoice #1042 ($1,200)</p>
+          <p class="ex">“Just a friendly bump on invoice #1042. Pay anytime here: [link]. No rush if it’s already in progress — a quick ‘got it’ helps me keep books clean.”</p>
+        </div>
+        <div class="flow-step">
+          <span class="day">Day +7 · firm</span>
+          <p class="subj">Subject: Following up — Invoice #1042 still open</p>
+          <p class="ex">“Checking in on invoice #1042 for $1,200, originally due Mar 15. Still unpaid on my side. Pay here: [link]. If something’s blocking (PO, cycle, scope), tell me — I’ll help unblock it.”</p>
+        </div>
+        <div class="flow-step">
+          <span class="day">Day +14 · final</span>
+          <p class="subj">Subject: Final notice — Invoice #1042 ($1,200) overdue</p>
+          <p class="ex">“Final reminder that invoice #1042 remains unpaid. Pay here: [link]. If I don’t hear by [date], I’ll pause new work. Still happy to resolve this quickly.”</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="what-you-get" aria-labelledby="get-title">
+      <h2 id="get-title">What you get</h2>
+      <ul class="check">
+        <li><strong>Day 0 / +3 / +7 / +14 templates</strong> — polite → firm → final, copy-paste ready</li>
+        <li><strong>Payment-link slots</strong> — Stripe, PayPal, Wise, Venmo patterns</li>
+        <li><strong>CSV + HTML tracker</strong> — log invoices; mark Paid → stop the sequence</li>
+        <li><strong>Tone guide</strong> — friendly / firm / final without burning the relationship</li>
+        <li><strong>Personal-use license</strong> — edit freely for your own freelance practice</li>
+      </ul>
+    </section>
+
+    <section id="for" aria-labelledby="for-title">
+      <h2 id="for-title">Who it’s for / not for</h2>
+      <div class="split for-not">
+        <div class="card">
+          <h3>For you if…</h3>
+          <p>You’re a solo freelancer (~5–40 invoices/year) who already invoices somehow but hates chasing. Designers, writers, developers, coaches.</p>
+        </div>
+        <div class="card no">
+          <h3>Not for you if…</h3>
+          <p>You need QuickBooks, FreshBooks, tax software, or auto Stripe sync. SoftDue is templates + a tracker — Phase 1 is manual mark-paid.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="price" aria-labelledby="price-title">
+      <h2 id="price-title">Price</h2>
+      <div class="price-box">
+        <p class="muted" style="margin:0;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;font-size:0.75rem;">SoftDue Kit</p>
+        <p class="amount">$9 <small>USD · one-time</small></p>
+        <p class="muted" style="margin:0 0 1.25rem;">Instant download after purchase · No subscription</p>
+        <a class="btn btn-primary" href="https://brewchristian.gumroad.com/l/abjltd" data-cta="gumroad"
+           onclick="window.goatcounter &amp;&amp; goatcounter.count({path: '/cta/buy', title: 'Buy SoftDue', event: true})">Buy SoftDue — $9</a>
+        <p class="muted" style="margin:1rem 0 0;font-size:0.85rem;">
+          Fair ask: if the kit isn’t useful, request a refund while we’re still validating the offer.
+        </p>
+      </div>
+    </section>
+
+    <section id="faq" class="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">FAQ</h2>
+      <details>
+        <summary>Does this send emails for me?</summary>
+        <p>No. SoftDue gives you the copy and a tracker. You send from your normal email (or schedule calendar nudges). Keep control of tone and timing.</p>
+      </details>
+      <details>
+        <summary>Will it sync with Stripe / QuickBooks?</summary>
+        <p>Not in this kit. Phase 1 is manual mark-paid. Paste your Stripe Payment Link (or PayPal / Wise / Venmo) into the templates.</p>
+      </details>
+      <details>
+        <summary>Is this a replacement for accounting software?</summary>
+        <p>No. SoftDue is the reminder sequence + tracker for freelancers who already invoice somehow and just need the chase emails.</p>
+      </details>
+      <details>
+        <summary>Can I edit the templates?</summary>
+        <p>Yes. They’re plain markdown in the ZIP. Adapt for your voice, late-fee policy, and payment methods.</p>
+      </details>
+    </section>
+  </div>
+
+  <footer class="site">
+    <div class="wrap">
+      <p style="font-weight:700;color:var(--fg);margin:0 0 0.35rem;">Checkout is live — instant download.</p>
+      <p class="muted" style="margin:0;">Get paid without the awkward email.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://brewchristian.gumroad.com/l/abjltd" data-cta="gumroad"
+           onclick="window.goatcounter &amp;&amp; goatcounter.count({path: '/cta/buy', title: 'Buy SoftDue', event: true})">Buy SoftDue — $9</a>
+      </div>
+      <p style="margin-top:1.5rem;">SoftDue · Invoice reminder templates · $9 one-time</p>
+      <p class="muted" style="margin:0.5rem 0 0;font-size:0.75rem;">Privacy-friendly page views via GoatCounter only. No ads, no fingerprinting.</p>
+    </div>
+  </footer>
+</body>
+</html>
