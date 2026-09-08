@@ -51,7 +51,7 @@
   backdrop.innerHTML = [
     '<div id="cg-fb-modal" role="dialog" aria-modal="true" aria-labelledby="cg-fb-title">',
     '<h2 id="cg-fb-title">Tell us anything</h2>',
-    '<p class="hint">Confused? Don’t like it? Bad deal? Too much work? Feature idea? Free-form — no script.</p>',
+    '<p class="hint">The chips below are just starter ideas — ignore them and type whatever the fuck you want. Rant, nitpick, confuse, feature wish, pricing gripe — all of it.</p>',
     '<div id="cg-fb-chips"></div>',
     '<form id="cg-fb-form" action="https://formsubmit.co/' + encodeURIComponent(to) + '" method="POST">',
     '<input type="hidden" name="_subject" value="[' + product + '] landing feedback">',
@@ -60,7 +60,7 @@
     '<input type="hidden" name="_captcha" value="false">',
     '<input type="hidden" name="_template" value="table">',
     '<input type="hidden" name="tags" id="cg-fb-tags" value="">',
-    '<textarea name="message" required placeholder="What’s confusing, missing, overpriced, or too much work?"></textarea>',
+    '<textarea name="message" required placeholder="Type anything. Seriously — chips are optional starters, not a menu."></textarea>',
     '<input type="email" name="email" placeholder="Email (optional — only if you want a reply)">',
     '<div id="cg-fb-actions"><button type="button" id="cg-fb-cancel">Close</button><button type="submit" id="cg-fb-send">Send feedback</button></div>',
     '</form><p id="cg-fb-done">Got it — thank you. This helps more than a sale.</p>',
